@@ -14,21 +14,25 @@ class DetailViewController: UIViewController{
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var copyright: UILabel!
     
-    var apodManager = ApodManager()
+    //var apodManager = ApodManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        apodManager.delegate = self
-        apodManager.fetch()
+        //apodManager.delegate = self
+        //apodManager.fetch()
         // Do any additional setup after loading the view.
+        self.titleLabel.text = todaysApod.title
+        self.dateLabel.text = todaysApod.date
+        self.textView.text = todaysApod.explanation
+        self.copyright.text = "© " + todaysApod.copyright
     }
 
 }
-
+/*
 extension DetailViewController: ApodManagerDelegate {
     func didUpdateApod(_ apodManager: ApodManager, apod: ApodModel) {
         DispatchQueue.main.async{
-            //self.expLabel.text = apod.explanation
+            
             self.titleLabel.text = apod.title
             self.dateLabel.text = apod.date
             self.textView.text = apod.explanation
@@ -44,4 +48,4 @@ extension DetailViewController: ApodManagerDelegate {
             self.present(alert, animated: true)
         }
     }
-}
+}*/

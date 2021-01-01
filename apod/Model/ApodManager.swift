@@ -52,6 +52,8 @@ struct ApodManager {
             let todaysDate = decodedData.date
             let todaysCr = decodedData.copyright
             
+            todaysApod = TodaysData(title: todaysTitle, explanation: todaysExp, url: todaysUrl, hdurl: todaysHdurl, date: todaysDate, copyright: todaysCr)
+            
             let apod = ApodModel(title: todaysTitle, explanation: todaysExp, url: todaysUrl, hdurl: todaysHdurl, date: todaysDate, copyright: todaysCr)
             
             return apod

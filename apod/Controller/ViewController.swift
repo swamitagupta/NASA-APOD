@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var apodImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var imageUrl: String = "https://apod.nasa.gov/apod/image/2101/2020_12_16_Kujal_Jizni_Pol_1500px-3.jpg"
     
@@ -18,10 +19,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         apodManager.delegate = self
+        print(Date())
         apodManager.fetch()
         var url = URL.init(string: imageUrl)
         self.apodImage.load(url: url!)
+        
         // Do any additional setup after loading the view.
     }
     
@@ -57,7 +62,6 @@ extension UIImageView {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         self?.image = image
-                        print("Hello")
                     }
                 }
             }

@@ -16,14 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="6yN-7s-oQW">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="linkColor"/>
+                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Astronomy picture of the day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwx-bB-Rba">
                                 <rect key="frame" x="96.5" y="144" width="221" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVX-Yx-80C">
-                                <rect key="frame" x="190.5" y="716" width="33" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVX-Yx-80C">
+                                <rect key="frame" x="170" y="716" width="74.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,7 +41,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9d-Uf-quM">
-                                <rect key="frame" x="174.5" y="757" width="65" height="30"/>
+                                <rect key="frame" x="174.5" y="756.5" width="65" height="30"/>
                                 <state key="normal" title="More info">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -59,9 +63,11 @@
                             <constraint firstItem="N9d-Uf-quM" firstAttribute="top" secondItem="nVX-Yx-80C" secondAttribute="bottom" constant="20" id="A38-X9-Y36"/>
                             <constraint firstItem="u9E-o1-XmV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GjY-EU-kx6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Aax-CL-Vw1" secondAttribute="trailing" constant="20" id="Lc7-7y-kAd"/>
+                            <constraint firstItem="6yN-7s-oQW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LzQ-gb-x88"/>
                             <constraint firstItem="Aax-CL-Vw1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="a3a-Sa-faN"/>
                             <constraint firstItem="nVX-Yx-80C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cTN-iH-XPN"/>
                             <constraint firstItem="bwx-bB-Rba" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dgg-Xg-p8U"/>
+                            <constraint firstItem="6yN-7s-oQW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gGp-zW-JIK"/>
                             <constraint firstItem="bwx-bB-Rba" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="gg8-Rw-XeT"/>
                             <constraint firstItem="N9d-Uf-quM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k52-Uc-lrg"/>
                             <constraint firstItem="Aax-CL-Vw1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="200" id="srg-EQ-h0e"/>
@@ -70,6 +76,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="6yN-7s-oQW" id="1aI-wS-A0c"/>
                         <outlet property="apodImage" destination="Aax-CL-Vw1" id="T8b-VA-fwh"/>
                         <outlet property="titleLabel" destination="nVX-Yx-80C" id="0y5-AF-etF"/>
                     </connections>
@@ -86,28 +93,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5a-cE-iW0">
-                                <rect key="frame" x="190.5" y="50" width="33" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5a-cE-iW0">
+                                <rect key="frame" x="170" y="50" width="74.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="copyright" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNF-mh-WaH">
-                                <rect key="frame" x="170.5" y="767" width="73" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNF-mh-WaH">
+                                <rect key="frame" x="207" y="788" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgb-oI-Qgp">
-                                <rect key="frame" x="189" y="91" width="36" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgb-oI-Qgp">
+                                <rect key="frame" x="207" y="91" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="62l-Xx-WGf">
-                                <rect key="frame" x="20" y="162" width="374" height="555"/>
+                                <rect key="frame" x="20" y="141" width="374" height="597"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -144,6 +150,9 @@
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
