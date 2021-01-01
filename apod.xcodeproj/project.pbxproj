@@ -15,6 +15,8 @@
 		70D42F52259F7AB100DFDB36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70D42F50259F7AB100DFDB36 /* LaunchScreen.storyboard */; };
 		70D42F5D259F7AB100DFDB36 /* apodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D42F5C259F7AB100DFDB36 /* apodTests.swift */; };
 		70D42F68259F7AB100DFDB36 /* apodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D42F67259F7AB100DFDB36 /* apodUITests.swift */; };
+		70D42F7C259F7CAC00DFDB36 /* ApodData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D42F7B259F7CAC00DFDB36 /* ApodData.swift */; };
+		70D42F81259F7DE500DFDB36 /* ApodManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D42F80259F7DE500DFDB36 /* ApodManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		70D42F63259F7AB100DFDB36 /* apodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = apodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70D42F67259F7AB100DFDB36 /* apodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apodUITests.swift; sourceTree = "<group>"; };
 		70D42F69259F7AB100DFDB36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70D42F7B259F7CAC00DFDB36 /* ApodData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodData.swift; sourceTree = "<group>"; };
+		70D42F80259F7DE500DFDB36 /* ApodManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +105,9 @@
 			children = (
 				70D42F45259F7AAC00DFDB36 /* AppDelegate.swift */,
 				70D42F47259F7AAC00DFDB36 /* SceneDelegate.swift */,
-				70D42F49259F7AAC00DFDB36 /* ViewController.swift */,
-				70D42F4B259F7AAC00DFDB36 /* Main.storyboard */,
+				70D42F78259F7B9500DFDB36 /* Model */,
+				70D42F7A259F7BAF00DFDB36 /* View */,
+				70D42F79259F7BA300DFDB36 /* Controller */,
 				70D42F4E259F7AB100DFDB36 /* Assets.xcassets */,
 				70D42F50259F7AB100DFDB36 /* LaunchScreen.storyboard */,
 				70D42F53259F7AB100DFDB36 /* Info.plist */,
@@ -126,6 +131,31 @@
 				70D42F69259F7AB100DFDB36 /* Info.plist */,
 			);
 			path = apodUITests;
+			sourceTree = "<group>";
+		};
+		70D42F78259F7B9500DFDB36 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				70D42F7B259F7CAC00DFDB36 /* ApodData.swift */,
+				70D42F80259F7DE500DFDB36 /* ApodManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		70D42F79259F7BA300DFDB36 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				70D42F49259F7AAC00DFDB36 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		70D42F7A259F7BAF00DFDB36 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				70D42F4B259F7AAC00DFDB36 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +291,8 @@
 				70D42F4A259F7AAC00DFDB36 /* ViewController.swift in Sources */,
 				70D42F46259F7AAC00DFDB36 /* AppDelegate.swift in Sources */,
 				70D42F48259F7AAC00DFDB36 /* SceneDelegate.swift in Sources */,
+				70D42F7C259F7CAC00DFDB36 /* ApodData.swift in Sources */,
+				70D42F81259F7DE500DFDB36 /* ApodManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
