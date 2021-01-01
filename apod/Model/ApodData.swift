@@ -12,6 +12,8 @@ struct ApodData: Codable {
     let explanation: String
     let url: String
     let hdurl: String
+    let date: String
+    let copyright: String
 }
 
 struct ApodModel{
@@ -19,4 +21,7 @@ struct ApodModel{
     let explanation: String
     let url: String
     let hdurl: String
+    let date: String
+    let copyright: String
 }
+

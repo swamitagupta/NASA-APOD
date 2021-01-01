@@ -9,7 +9,11 @@ import UIKit
 
 class DetailViewController: UIViewController{
 
-    @IBOutlet weak var expLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var copyright: UILabel!
+    
     var apodManager = ApodManager()
     
     override func viewDidLoad() {
@@ -24,8 +28,11 @@ class DetailViewController: UIViewController{
 extension DetailViewController: ApodManagerDelegate {
     func didUpdateApod(_ apodManager: ApodManager, apod: ApodModel) {
         DispatchQueue.main.async{
-            self.expLabel.text = apod.explanation
-            print("Hi")
+            //self.expLabel.text = apod.explanation
+            self.titleLabel.text = apod.title
+            self.dateLabel.text = apod.date
+            self.textView.text = apod.explanation
+            self.copyright.text = "© " + apod.copyright
         }
     }
     
