@@ -12,23 +12,31 @@ class ViewController: UIViewController {
     @IBOutlet weak var apodImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    var imageUrl: String = "https://apod.nasa.gov/apod/image/2101/2020_12_16_Kujal_Jizni_Pol_1500px-3.jpg"
+    
     var apodManager = ApodManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         apodManager.delegate = self
         apodManager.fetch()
+        var url = URL.init(string: imageUrl)
+        self.apodImage.load(url: url!)
         // Do any additional setup after loading the view.
     }
-
-
+    
+    
+    
 }
 
 extension ViewController: ApodManagerDelegate{
     func didUpdateApod(_ apodManager: ApodManager, apod: ApodModel) {
         DispatchQueue.main.async{
             self.titleLabel.text = apod.title
-            print("Hi")
+            self.imageUrl = apod.url
+            print(self.imageUrl)
+            
+            
         }
     }
     
@@ -40,6 +48,19 @@ extension ViewController: ApodManagerDelegate{
             self.present(alert, animated: true)
         }
     }
-    
-    
+}
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                        print("Hello")
+                    }
+                }
+            }
+        }
+    }
 }

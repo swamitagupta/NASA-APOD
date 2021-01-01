@@ -18,6 +18,7 @@
 		70D42F7C259F7CAC00DFDB36 /* ApodData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D42F7B259F7CAC00DFDB36 /* ApodData.swift */; };
 		70D42F81259F7DE500DFDB36 /* ApodManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D42F80259F7DE500DFDB36 /* ApodManager.swift */; };
 		70D42F86259F844800DFDB36 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D42F85259F844800DFDB36 /* DetailViewController.swift */; };
+		70D42F8B259F906D00DFDB36 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D42F8A259F906D00DFDB36 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		70D42F7B259F7CAC00DFDB36 /* ApodData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodData.swift; sourceTree = "<group>"; };
 		70D42F80259F7DE500DFDB36 /* ApodManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodManager.swift; sourceTree = "<group>"; };
 		70D42F85259F844800DFDB36 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		70D42F8A259F906D00DFDB36 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			children = (
 				70D42F49259F7AAC00DFDB36 /* ViewController.swift */,
 				70D42F85259F844800DFDB36 /* DetailViewController.swift */,
+				70D42F8A259F906D00DFDB36 /* TestViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70D42F8B259F906D00DFDB36 /* TestViewController.swift in Sources */,
 				70D42F4A259F7AAC00DFDB36 /* ViewController.swift in Sources */,
 				70D42F46259F7AAC00DFDB36 /* AppDelegate.swift in Sources */,
 				70D42F48259F7AAC00DFDB36 /* SceneDelegate.swift in Sources */,
