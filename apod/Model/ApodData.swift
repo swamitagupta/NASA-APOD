@@ -36,3 +36,5 @@ struct TodaysData {
 }
 
 var todaysApod = TodaysData(title: "", explanation: "", url: "", hdurl: "", date: "", copyright: "")
+
+

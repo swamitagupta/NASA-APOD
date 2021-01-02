@@ -22,8 +22,19 @@ class ViewController: UIViewController {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         apodManager.delegate = self
-        print(Date())
-        apodManager.fetch()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let date = dateFormatter.string(from: Date())
+        
+        if date == todaysApod.date{
+            self.titleLabel.text = todaysApod.title
+            self.imageUrl = todaysApod.url
+        }else {
+            apodManager.fetch()
+        }
+        
         var url = URL.init(string: imageUrl)
         self.apodImage.load(url: url!)
         
