@@ -31,12 +31,13 @@ class ViewController: UIViewController {
         if date == todaysApod.date{
             self.titleLabel.text = todaysApod.title
             self.imageUrl = todaysApod.url
+            var url = URL.init(string: imageUrl)
+            self.apodImage.load(url: url!)
         }else {
             apodManager.fetch()
         }
         
-        var url = URL.init(string: imageUrl)
-        self.apodImage.load(url: url!)
+        
         
         // Do any additional setup after loading the view.
     }
@@ -47,10 +48,12 @@ class ViewController: UIViewController {
 
 extension ViewController: ApodManagerDelegate{
     func didUpdateApod(_ apodManager: ApodManager, apod: ApodModel) {
-        DispatchQueue.main.async{
+        DispatchQueue.main.async{ [self] in
             self.titleLabel.text = apod.title
             self.imageUrl = apod.url
             print(self.imageUrl)
+            var url = URL.init(string: imageUrl)
+            self.apodImage.load(url: url!)
             
             
         }
